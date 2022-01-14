@@ -43,24 +43,24 @@ What I present here is a series of scripts which interact with QGIS and Agisoft 
 
 ### rip_rename.py
 
-INPUT: separate TIFF for each band at each camera station
+**INPUT**: separate TIFF for each band at each camera station
 
 1. Set root directory containing subfolders
 
-OUTPUT: renamed TIFFs to facilitate creation of Photoscan control file (i.e. removes timestamp from filename)
+**OUTPUT**: renamed TIFFs to facilitate creation of Photoscan control file (i.e. removes timestamp from filename)
 
 ### control_txt.py
 
-INPUT: TASKFILE.TXT from Rikola imager (contains airborne control)
+**INPUT**: TASKFILE.TXT from Rikola imager (contains airborne control)
 
 1. Set path of TASKFILE.TXT
 2. Set number of bands
 
-OUTPUT: control.txt – airborne control in CSV format
+**OUTPUT**: control.txt – airborne control in CSV format
 
 ### hyp_align1.py
 
-INPUT: renamed TIFFs, control.txt
+**INPUT**: renamed TIFFs, control.txt
 
 1. Set root directory containing subfolders
 2. Set number of bands
@@ -72,35 +72,35 @@ USER INTERACTION: All cameras with control info loaded into single chunk; user m
 
 1. Set root directory containing subfolders
 
-OUTPUT: camerasOut.txt – camera pose estimations resulting from aligning images from all bands simultaneously
+**OUTPUT**: camerasOut.txt – camera pose estimations resulting from aligning images from all bands simultaneously
 
 ### control_txt2.py
 
-INPUT: camerasOut.txt
+**INPUT**: camerasOut.txt
 
 1. Set directory containing camerasOut.txt (root)
 
-OUTPUT: control2.txt – camera pose estimations from hyp_align2 in CSV format 
+**OUTPUT**: control2.txt – camera pose estimations from hyp_align2 in CSV format 
 
 ### hyp_align3.py
 
-INPUT: renamed TIFFs, control2.txt
+**INPUT**: renamed TIFFs, control2.txt
 
 1. Set root directory containing subfolders
 2. Set number of bands
 3. Set output coordinate system (projected recommended)
 4. 4et output resolution of orthomosaics
 
-OUTPUT: Separate orthomosaics for each band (‘orthoband1.tif’ etc.)
+**OUTPUT**: Separate orthomosaics for each band (‘orthoband1.tif’ etc.)
 
 ### QGIS_merge.py
 
-INPUT: Separate orthomosaics for each band (‘orthoband1.tif’ etc.)
+**INPUT**: Separate orthomosaics for each band (‘orthoband1.tif’ etc.)
 
 1. Set path containing orthomosaics
 2. Set number of bands
 
-OUTPUT: final hypercube (GeoTIFF format)
+**OUTPUT**: final hypercube (GeoTIFF format)
 
 ## Funding
 
